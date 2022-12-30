@@ -1,3 +1,5 @@
+valuesFilePath: ./values.yml
+
 pipelines:
   - name: petclinic_basic
     steps:
