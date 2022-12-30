@@ -1,2 +1,4 @@
+gitProvider: oren_git
 artifactory: my_artifactory
+sourceRepoPath: oren-ezer/spring-petclinic
 deployerRepo: mvn

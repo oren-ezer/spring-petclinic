@@ -3,3 +3,8 @@ resources:
     type: PropertyBag
     configuration:
       releaseVersion: ''
+  - name: mvn_source_repo
+    type: GitRepo
+    configuration:
+      path: {{ .Values.sourceRepoPath }}
+      gitProvider: {{ .Values.gitProvider }}
