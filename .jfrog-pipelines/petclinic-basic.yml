@@ -1,5 +1,5 @@
 pipelines:
-  - name: petclinic-basic
+  - name: petclinic_basic
     steps:
       - name: first2
         type: Bash
