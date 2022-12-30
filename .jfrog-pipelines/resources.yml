@@ -1,5 +1,5 @@
 resources:
-  - name: intro_bag
+  - name: intro_bag2
     type: PropertyBag
     configuration:
       releaseVersion: ''
