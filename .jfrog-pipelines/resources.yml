@@ -1,12 +1,12 @@
 valuesFilePath: ./values.yml
 
 resources:
-  - name: intro_bag2
-    type: PropertyBag
-    configuration:
-      releaseVersion: ''
   - name: mvn_source_repo
     type: GitRepo
     configuration:
       path: {{ .Values.sourceRepoPath }}
       gitProvider: {{ .Values.gitProvider }}
+  - name: pc_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: {{ .Values.artifactory }}

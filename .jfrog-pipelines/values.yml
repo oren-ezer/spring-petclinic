@@ -2,3 +2,6 @@ gitProvider: oren_git
 artifactory: my_artifactory
 sourceRepoPath: oren-ezer/spring-petclinic
 deployerRepo: mvn
+artifactoryUrl: awsexperince.jfrog.io
+dockerRepo: docker
+imageName: spring-petclinic
