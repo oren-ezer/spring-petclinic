@@ -27,7 +27,5 @@ pipelines:
           inputResources:
             - name: mvn_source_repo
             - name: pc_build_info
-          outputResources:
-            - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
