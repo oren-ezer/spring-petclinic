@@ -10,3 +10,9 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
+  - name: mvn_fileSpec
+    type: FileSpec
+    configuration:
+      sourceArtifactory: {{ .Values.artifactory }}
+      pattern: {{ .Values.deployerRepo }}/org/springframework/samples/spring-petclinic/2.2.0.BUILD-SNAPSHOT/spring-petclinic-2.2.0.BUILD-${run_number}.jar
+      target: target/
