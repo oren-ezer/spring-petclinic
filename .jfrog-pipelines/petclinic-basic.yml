@@ -22,7 +22,12 @@ pipelines:
           dockerFileName: Dockerfile
           dockerImageName:  {{ .Values.artifactoryUrl }}/{{ .Values.dockerRepo }}/{{ .Values.imageName }}
           dockerImageTag: ${run_number}
+          inputSteps:
+            - name: mvn_build_step
           inputResources:
             - name: mvn_source_repo
+            - name: pc_build_info
+          outputResources:
+            - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
