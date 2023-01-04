@@ -33,4 +33,4 @@ pipelines:
         execution:
           onStart:
             - ls -ltra
-            - ls -ltra workspace/
+            - ls -ltra dependencyState/resources/mvn_source_repo
