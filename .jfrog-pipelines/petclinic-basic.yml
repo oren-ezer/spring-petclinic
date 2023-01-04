@@ -30,6 +30,6 @@ pipelines:
             - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
-          execution:
-            onStart:
-              - ls -ltra
+        execution:
+          onStart:
+            - ls -ltra
