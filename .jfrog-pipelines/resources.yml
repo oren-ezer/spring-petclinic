@@ -15,5 +15,5 @@ resources:
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
       # pattern: {{ .Values.mvnLocalRepo }}/org/springframework/samples/spring-petclinic/2.2.0.BUILD-SNAPSHOT/spring-petclinic-2.2.0.BUILD-${run_number}.jar
-      pattern: mvn-dev-local/org/springframework/samples/spring-petclinic/2.2.0.BUILD-SNAPSHOT/spring-petclinic-2.2.0.BUILD-${run_number}.jar
+      pattern: mvn-dev-local/org/springframework/samples/spring-petclinic/2.2.0.BUILD-SNAPSHOT/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar
       target: target/
