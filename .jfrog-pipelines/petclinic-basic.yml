@@ -8,6 +8,7 @@ pipelines:
         configuration:
           deployerSnapshotRepo: {{ .Values.deployerRepo }}
           deployerReleaseRepo: {{ .Values.deployerRepo }}
+          autoPublishBuildInfo: true
           inputResources:
             - name: mvn_source_repo
           outputResources:
@@ -29,3 +30,6 @@ pipelines:
             - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
+          execution:
+            onStart:
+              - ls -ltra
