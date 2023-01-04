@@ -14,5 +14,5 @@ resources:
     type: FileSpec
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
-      pattern: {{ .Values.deployerRepo }}/org/springframework/samples/spring-petclinic/2.2.0.BUILD-SNAPSHOT/spring-petclinic-2.2.0.BUILD-${run_number}.jar
+      pattern: {{ .Values.mvnLocalRepo }}/org/springframework/samples/spring-petclinic/2.2.0.BUILD-SNAPSHOT/spring-petclinic-2.2.0.BUILD-${run_number}.jar
       target: target/
