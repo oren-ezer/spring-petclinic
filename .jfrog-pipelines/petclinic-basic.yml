@@ -8,6 +8,8 @@ pipelines:
         configuration:
           deployerSnapshotRepo: {{ .Values.deployerRepo }}
           deployerReleaseRepo: {{ .Values.deployerRepo }}
+          resolverSnapshotRepo: {{ .Values.deployerRepo }}
+          resolverReleaseRepo: {{ .Values.deployerRepo }}
           autoPublishBuildInfo: true
           inputResources:
             - name: mvn_source_repo
