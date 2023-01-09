@@ -42,8 +42,10 @@ pipelines:
           targetRepository: {{ .Values.dockerRepo }}
           integrations:
             - name: {{ .Values.artifactory }}                           
-          inputSteps:
+          inputResources:
             - name: pc_build_info
+          inputSteps:
+            - name: docker_build
  
       - name: publish_app_build
         type: PublishBuildInfo
