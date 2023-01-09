@@ -38,3 +38,5 @@ pipelines:
             - ls -ltra
             - ls -ltra dependencyState/resources/mvn_source_repo
             - echo "spring-petclinic-2.2.0.BUILD-${run_number}.jar"
+          onFailure:
+            - ls -ltra
