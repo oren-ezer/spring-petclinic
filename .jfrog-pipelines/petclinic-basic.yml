@@ -17,10 +17,11 @@ pipelines:
             - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
+      
       - name: docker_build
         type: DockerBuild
         configuration:
-          affinityGroup: dbp_group
+          affinityGroup: docker_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
           dockerImageName:  {{ .Values.artifactoryUrl }}/{{ .Values.dockerRepo }}/{{ .Values.imageName }}
@@ -33,11 +34,22 @@ pipelines:
             - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
-        execution:
-          onStart:
-            - ls -ltra
-            - ls -ltra dependencyState/resources/mvn_source_repo
-            - echo "spring-petclinic-2.2.0.BUILD-${run_number}.jar"
-          onFailure:
-            - ls -ltra
-            - ls -ltra target/
+      
+      - name: docker_push
+        type: DockerPush
+        configuration:
+          affinityGroup: docker_group
+          targetRepository: {{ .Values.dockerRepo }}
+          integrations:
+            - name: {{ .Values.artifactory }}                           
+          inputSteps:
+            - name: pc_build_info
+ 
+      - name: publish_app_build
+        type: PublishBuildInfo
+        configuration:
+          affinityGroup: docker_group
+          inputSteps:
+            - name: docker_push
+          outputResources:
+            - name: pc_build_info
