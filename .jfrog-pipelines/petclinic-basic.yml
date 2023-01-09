@@ -40,3 +40,4 @@ pipelines:
             - echo "spring-petclinic-2.2.0.BUILD-${run_number}.jar"
           onFailure:
             - ls -ltra
+            - ls -ltra target/
