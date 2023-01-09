@@ -31,7 +31,7 @@ pipelines:
           inputResources:
             - name: mvn_source_repo
             - name: mvn_fileSpec
-            - name: pc_build_info
+            # - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
       
