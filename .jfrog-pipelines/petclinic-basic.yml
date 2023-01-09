@@ -10,11 +10,11 @@ pipelines:
           deployerReleaseRepo: {{ .Values.deployerRepo }}
           resolverSnapshotRepo: {{ .Values.deployerRepo }}
           resolverReleaseRepo: {{ .Values.deployerRepo }}
-          autoPublishBuildInfo: true
+          autoPublishBuildInfo: false
           inputResources:
             - name: mvn_source_repo
-          outputResources:
-            - name: pc_build_info
+          # outputResources:
+          #   - name: pc_build_info
           integrations:
             - name: {{ .Values.artifactory }}
       
