@@ -10,7 +10,7 @@ pipelines:
           deployerReleaseRepo: {{ .Values.deployerRepo }}
           resolverSnapshotRepo: {{ .Values.deployerRepo }}
           resolverReleaseRepo: {{ .Values.deployerRepo }}
-          autoPublishBuildInfo: false
+          autoPublishBuildInfo: true
           inputResources:
             - name: mvn_source_repo
           # outputResources:
