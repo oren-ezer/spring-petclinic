@@ -56,3 +56,11 @@ pipelines:
             - name: docker_push
           outputResources:
             - name: pc_build_info
+
+      - name: xray_scan
+        type: XrayScan
+        configuration:
+          inputResources:
+            - name: pc_build_info
+
+      # TODO: Add Promotion?
